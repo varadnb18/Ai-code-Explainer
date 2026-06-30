@@ -10,6 +10,7 @@ export default function NavBar({ activeSection, onNavigate }) {
     { id: 'architecture', label: 'Architecture' },
     { id: 'defense-strategy', label: 'Defense Strategy' },
     { id: 'features', label: 'Tech Stack' },
+    { id: 'try-live-demo', label: 'Try Live Demo' },
   ];
 
   const handleClick = (id) => {

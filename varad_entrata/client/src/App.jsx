@@ -6,6 +6,7 @@ import ProblemSection from './components/ProblemSection';
 import ArchitectureSection from './components/ArchitectureSection';
 import DefenseSection from './components/DefenseSection';
 import FeaturesSection from './components/FeaturesSection';
+import LiveAppSection from './components/LiveAppSection';
 import FooterSection from './components/FooterSection';
 
 /**
@@ -26,6 +27,7 @@ export default function App() {
     'defense-strategy': useRef(null),
     features: useRef(null),
     'the-problem': useRef(null),
+    'try-live-demo': useRef(null),
   };
 
   // Scroll to section
@@ -41,7 +43,7 @@ export default function App() {
   // Intersection Observer for active section tracking + scroll reveals
   useEffect(() => {
     const sections = document.querySelectorAll('[id]');
-    const sectionIds = ['hero', 'the-problem', 'architecture', 'defense-strategy', 'features'];
+    const sectionIds = ['hero', 'the-problem', 'architecture', 'defense-strategy', 'features', 'try-live-demo'];
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -119,6 +121,12 @@ export default function App() {
 
       <div className="reveal">
         <FeaturesSection sectionRef={sectionRefs.features} />
+      </div>
+
+      <TreeRule variant="default" />
+
+      <div className="reveal">
+        <LiveAppSection sectionRef={sectionRefs['try-live-demo']} />
       </div>
 
       <FooterSection />
